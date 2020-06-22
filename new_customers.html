@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 住所補完JavaScriptライブラリの読み込み -->
+    <script type="text/javascript" src="https://postcode-jp.com/js/postcodejp.js" charset="utf-8"> </script>
+    <!--JSファイルの読み込み-->
+    <script type="text/javascript" src="index.js" charset="utf-8"></script>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+    <title>その他（新規・FORUSHOKI取引のみ）</title>
+</head>
+<body onload="loadTanto()">
+    <div class="container">
+    <p><a href="index.html">トップ画面に戻る</a></p>
+    <h1>FUROSHIKIご注文登録</h1>
+    <h2>その他（新規・FORUSHOKI取引のみ）</h2>
+    <form name="orderForm" method="POST" action="https://script.google.com/macros/s/AKfycbzPWgOZXfDuo0ii7THvb_wxEWkErOIBn-kgPYRzIBNbGmoGDy6b/exec">
+        <input type="hidden" id="customerId" name="customerId" value="">
+        <input type="hidden" id="shopId" name="shopId" value="">
+        <label for="customer_name">お客様名</label><input type="text" id="customer_name" name="customer_name"><br>
+        <label for="zip_code">郵便番号</label><input type="text" id="zip_code" name="zip_code" size="7">（-ハイフンなし7桁）<br>
+        <label for="prefecture">都道府県</label><input type="text" id="prefecture" name="prefecture" size="8">
+        <label for="city">市区町村</label><input type="text" id="city" name="city" size="15">
+        <label for="town">町域</label><input type="text" id="town" name="town" size="15"><br>
+        <label for="address">以下住所</label><input type="text" id="address" name="address" size="20">
+        <label for="bldg">建物名等</label><input type="text" id="bldg" name="bldg" size="20"><br>
+        <label for="tel">TEL</label><input type="text" id="tel" name="tel" size="15">
+        <label for="fax">FAX</label><input type="text" id="fax" name="fax" size="15"><br>
+        <label for="email">メール</label><input type="text" id="email" name="email"><br>
+        <label for="tanto">ご担当者名</label><input type="text" id="tanto" name="tanto" size="10"><br>
+        <label for="eigyo_tanto">営業担当</label><select id="eigyo_tanto" name="eigyo_tanto"></select><br>
+        
+        <hr>
+        <p>ご注文内容</p>
+        <select id="product" name="product">
+            <option disabled selected value="">--商品を選択--</option>
+            <optgroup label="レギュラー45">
+                <option value="45L">45L透明</option>
+                <option value="45Lb">45L青</option>
+                <option value="45Ly">45L黄</option>
+            </optgroup>
+            <optgroup label="レギュラー70">
+                <option value="70L">70L透明</option>
+                <option value="70Lb">70L青</option>
+                <option value="70Ly">70L黄</option>
+            </optgroup>
+            <optgroup label="レギュラー90">
+                <option value="90L">90L透明</option>
+                <option value="90Lb">90L青</option>
+                <option value="90Ly">90L黄</option>
+            </optgroup>
+            <optgroup label="レギュラー120">
+                <option value="120L">120L</option>
+            </optgroup>
+            <optgroup label="むすぶ45">
+                <option value="m45L">45L透明</option>
+                <option value="m45Lb">45L青</option>
+                <option value="m45Ly">45L黄</option>
+            </optgroup>
+            <optgroup label="むすぶ70">
+                <option value="m70L">70L透明</option>
+                <option value="m70Lb">70L青</option>
+                <option value="m70Ly">70L黄</option>
+            </optgroup>
+            <optgroup label="むすぶ90">    
+                <option value="m90L">90L透明</option>
+                <option value="m90Lb">90L青</option>
+                <option value="m90Ly">90L黄</option>
+            </optgroup>
+            <optgroup label="むすぶ120">
+                <option value="m120L">120L</option>
+            </optgroup>
+        </select>
+
+        <input type="text" id="orderNum" name="orderNum" size="3"><label for="orderNum">箱</label><br>
+        <input type="submit" value="登録"  onclick="return check()">
+
+    </form>
+</div>
+</body>
+</html>
