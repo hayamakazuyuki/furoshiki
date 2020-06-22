@@ -15,10 +15,12 @@
         <title>既存取引顧客</title>
     </head>
     <body onload="loadTanto()">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">FUROSHIKI受注管理</a>
+        </nav>
         <div class="container">
-        <p><a href="index.html">トップ画面に戻る</a></p>
-        <h1>FUROSHIKIご注文登録</h1>
-        <h2>既存取引顧客</h2>
+        <h1>ご注文登録：既存取引顧客</h1>
+        <h2></h2>
         <form name="orderForm" method="POST" action="https://script.google.com/a/sfinter.com/macros/s/AKfycbwZ7ae46yz14SDqT3eMZs8SIvuZuYJQTdvh4KhG-SA2A0qsGL8C/exec">
             <label for="customerId">事業者ID</label><input type="text" id="customerId" name="customerId" size="5">
             <label for="shopId">事業所ID</label><input type="text" id="shopId" name="shopId" size="5"><br>
