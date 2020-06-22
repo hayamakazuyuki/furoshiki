@@ -15,10 +15,11 @@
         <title>パートナー企業</title>
     </head>
     <body onload="loadTanto()">
+        <div class="container">
         <p><a href="index.html">トップ画面に戻る</a></p>
         <h1>FUROSHIKIご注文登録</h1>
         <h2>パートナー企業</h2>
-        <form name="orderForm" method="POST" action="https://script.google.com/macros/s/AKfycbzPWgOZXfDuo0ii7THvb_wxEWkErOIBn-kgPYRzIBNbGmoGDy6b/exec">
+        <form name="orderForm" method="POST" action="https://script.google.com/a/sfinter.com/macros/s/AKfycbwZ7ae46yz14SDqT3eMZs8SIvuZuYJQTdvh4KhG-SA2A0qsGL8C/exec">
             <label for="customerId">パートナーID</label><input type="text" id="customerId" name="customerId" size="5"><br>
             <input type="hidden" id="shopId" name="shopId" value="pt">
             <label for="customer_name">パートナー名</label><input type="text" id="customer_name" name="customer_name"><br>
@@ -80,5 +81,6 @@
             <input type="submit" value="登録"  onclick="return check()">
     
         </form>
+    </div>
     </body>
 </html>
