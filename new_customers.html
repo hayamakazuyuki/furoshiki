@@ -24,7 +24,7 @@
         <input type="hidden" id="customerId" name="customerId" value="">
         <input type="hidden" id="shopId" name="shopId" value="">
         <label for="customer_name">お客様名</label><input type="text" id="customer_name" name="customer_name"><br>
-        <label for="zip_code">郵便番号</label><input type="text" id="zip_code" name="zip_code" size="7">（-ハイフンなし7桁）<br>
+        <label for="zip_code">郵便番号</label><input type="text" id="zip_code" name="zip_code" maxlength="7"  placeholder="-ハイフンなし7桁"><br>
         <label for="prefecture">都道府県</label><input type="text" id="prefecture" name="prefecture" size="8">
         <label for="city">市区町村</label><input type="text" id="city" name="city" size="15">
         <label for="town">町域</label><input type="text" id="town" name="town" size="15"><br>
@@ -32,7 +32,7 @@
         <label for="bldg">建物名等</label><input type="text" id="bldg" name="bldg" size="20"><br>
         <label for="tel">TEL</label><input type="text" id="tel" name="tel" size="15">
         <label for="fax">FAX</label><input type="text" id="fax" name="fax" size="15"><br>
-        <label for="email">メール</label><input type="text" id="email" name="email"><br>
+        <label for="email">メール</label><input type="text" id="email" name="email" placeholder="例）info@example.com"><br>
         <label for="tanto">ご担当者名</label><input type="text" id="tanto" name="tanto" size="10"><br>
         <label for="eigyo_tanto">営業担当</label><select id="eigyo_tanto" name="eigyo_tanto"></select><br>
         
@@ -79,7 +79,7 @@
         </select>
 
         <input type="text" id="orderNum" name="orderNum" size="3"><label for="orderNum">箱</label><br>
-        <input type="submit" value="登録"  onclick="return check()">
+        <input class="btn btn-primary" type="submit" value="登録"  onclick="return check()">
 
     </form>
 </div>
