@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <!-- 住所補完JavaScriptライブラリの読み込み -->
+        <script type="text/javascript" src="https://postcode-jp.com/js/postcodejp.js" charset="utf-8"> </script>
+        <!--JSファイルの読み込み-->
+        <script type="text/javascript" src="index.js" charset="utf-8"></script>
+        
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <title>ご注文入力:FUROSHIKI</title>
+    </head>
+    <body onload="setTanto()">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">FUROSHIKI受注管理</a>
+        </nav>
+        <div class="container">
+        <h1>ご注文入力:FUROSHIKI</h1>
+        <form name="orderForm" method="POST" action="https://script.google.com/macros/s/AKfycbzPWgOZXfDuo0ii7THvb_wxEWkErOIBn-kgPYRzIBNbGmoGDy6b/exec">
+        
+            <label>入力担当</label><select id="inputBy" name="inputBy"></select>
+            <label>当社営業担当</label><select id="eigyo_tanto" name="eigyo_tanto"></select><br>
+
+         
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="existingCustomer" name="type" value="1" required>
+            <label class="form-check-label" for="existingCustomer">既存顧客</label></div>
+          
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="partner" name="type" value="2">
+            <label class="form-check-label" for="partner">パートナー</label></div>
+          
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="furoshikiOnly" name="type" value="9">
+            <label class="form-check-label" for="furoshikiOnly">FUROSHIKIのみ</label></div>
+            
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="forFree" name="type" value="4">
+            <label class="form-check-label" for="forFree">サービス</label></div>
+            <br>
+            <label for="customerId">事業者ID</label><input type="text" id="customerId" name="customerId" size="5">
+            <label for="shopId">事業所ID</label><input type="text" id="shopId" name="shopId" size="5"><br>
+            <label for="customer_name">事業者名</label><input type="text" id="customer_name" name="customer_name" required>
+            <label for="shop_name">配送先名</label><input type="text" id="destination" name="destination" required><br>
+           
+            <label for="zip_code">郵便番号</label><input type="text" id="zip_code" name="zip_code" maxlength="7" placeholder="-ハイフンなし7桁" required><br>
+            <label for="prefecture">都道府県</label><input type="text" id="prefecture" name="prefecture" placeholder="都道府県">
+            <input type="text" id="city" name="city" placeholder="市区町村"><br>
+            <label for="address">以下住所</label><input type="text" id="address" name="address" placeholder="その他住所">
+            <input type="text" id="bldg" name="bldg" placeholder="ビル名等"><br>
+            <label for="email">メール　</label><input type="text" id="email" name="email" placeholder="例）info@example.com">
+            <label for="tel">TEL</label><input type="tel" pattern="[\d\-]*" id="tel" name="tel" size="15" required>
+            <label for="fax">FAX</label><input type="tel" pattern="[\d\-]*" id="fax" name="fax" size="15"><br>
+            <label for="tanto">ご担当者</label><input type="text" id="tanto" name="tanto">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="excludeDeliverly" name="excludeDeliverly" value="1">
+                <label class="form-check-label" for="excludeDeliverly">特別配送（通常の配送から除外）</label>
+            </div>
+            <hr>
+            <p>ご注文内容</p>
+            <select id="product" name="product">
+                <option disabled selected value="">--商品を選択--</option>
+                <optgroup label="レギュラー45">
+                    <option value="45L">45L透明</option>
+                    <option value="45Lb">45L青</option>
+                    <option value="45Ly">45L黄</option>
+                </optgroup>
+                <optgroup label="レギュラー70">
+                    <option value="70L">70L透明</option>
+                    <option value="70Lb">70L青</option>
+                    <option value="70Ly">70L黄</option>
+                </optgroup>
+                <optgroup label="レギュラー90">
+                    <option value="90L">90L透明</option>
+                    <option value="90Lb">90L青</option>
+                    <option value="90Ly">90L黄</option>
+                </optgroup>
+                <optgroup label="レギュラー120">
+                    <option value="120L">120L</option>
+                </optgroup>
+                <optgroup label="むすぶ45">
+                    <option value="m45L">45L透明</option>
+                    <option value="m45Lb">45L青</option>
+                    <option value="m45Ly">45L黄</option>
+                </optgroup>
+                <optgroup label="むすぶ70">
+                    <option value="m70L">70L透明</option>
+                    <option value="m70Lb">70L青</option>
+                    <option value="m70Ly">70L黄</option>
+                </optgroup>
+                <optgroup label="むすぶ90">    
+                    <option value="m90L">90L透明</option>
+                    <option value="m90Lb">90L青</option>
+                    <option value="m90Ly">90L黄</option>
+                </optgroup>
+                <optgroup label="むすぶ120">
+                    <option value="m120L">120L</option>
+                </optgroup>
+            </select>
+    
+            <input type="text" id="orderNum" name="orderNum" size="3"><label for="orderNum">箱</label><br>
+
+            <input class="btn btn-primary" type="submit" value="登録" onclick="return check()">
+    
+        </form>
+    </div>
+    </body>
+</html>
