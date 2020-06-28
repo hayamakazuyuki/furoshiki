@@ -9,7 +9,7 @@ function initPostcodeJp() {
     // 住所補完フィールドを追加
     postcodeJp.add(new postcodejp.address.StateTextbox('prefecture'));
     postcodeJp.add(new postcodejp.address.TownTextbox('city'));
-    postcodeJp.add(new postcodejp.address.StreetTextbox('town'));
+    postcodeJp.add(new postcodejp.address.StreetTextbox('address'));
 
     // 郵便番号テキストボックスの監視を開始
     postcodeJp.observe();
@@ -21,19 +21,37 @@ function initPostcodeJp() {
     window.attachEvent('onload', initPostcodeJp)
   }
   
-  
-
-function loadTanto() {
-  //リストをループ処理で取り出してセットする
-  for(var i=0;i<list.length;i++){
+function setTanto() {
+  // 入力担当者をセットする
+  for(var i=0;i<inputTantoList.length;i++){
     const opt = document.createElement('option');
-    opt.value = list[i].val; //value値
-    opt.text = list[i].txt; //テキスト値
+    opt.value = inputTantoList[i].val; //value値
+    opt.text = inputTantoList[i].txt; //テキスト値
+    document.getElementById('inputBy').appendChild(opt);
+  }
+
+  // 営業担当者をセットする
+  for(var i=0;i<eigyoTantoList.length;i++){
+    const opt = document.createElement('option');
+    opt.value = eigyoTantoList[i].val; //value値
+    opt.text = eigyoTantoList[i].txt; //テキスト値
     document.getElementById('eigyo_tanto').appendChild(opt);
   }
 }
 
-const list = [
+//入力担当者のリスト
+const inputTantoList = [
+  {val:"", txt:"-選択-"},
+  {val:"suishin", txt:"事業推進"},
+  {val:"toukatsu", txt:"営業統括"},
+  {val:"ichibu", txt:"営業第1部"},
+  {val:"nibu", txt:"営業第２部"},
+  {val:"エシカル", txt:"エシカル"},
+  {val:"kaihatsu", txt:"営業開発"},
+];
+
+// 営業担当者のリスト
+const eigyoTantoList = [
   {val:"", txt:"-選択-"},
   //第1営業部
   {val:'watanabe', txt:'渡邊'},
@@ -72,7 +90,6 @@ const list = [
   //第5営業部
   {val:'komatsu', txt:'小松'},
   {val:'onda', txt:'恩田'},
-
 ];
 
 function check() {
@@ -89,6 +106,12 @@ function check() {
   }
 }
 }
+
+function showValues() {
+  const inputBy = document.getElementById("inputBy").value;
+  alert(inputBy);
+}
+
 
 function createConfirmMessage() {
   return message;
