@@ -22,8 +22,8 @@
         <h1>ご注文入力:FUROSHIKI</h1>
         <form name="orderForm" method="POST" action="https://script.google.com/a/sfinter.com/macros/s/AKfycbwZ7ae46yz14SDqT3eMZs8SIvuZuYJQTdvh4KhG-SA2A0qsGL8C/exec">
         
-            <label>入力担当</label><select id="inputBy" name="inputBy"></select>
-            <label>当社営業担当</label><select id="eigyo_tanto" name="eigyo_tanto"></select><br>
+            <label>入力担当</label><select id="inputBy" name="inputBy" required></select>
+            <label>当社営業担当</label><select id="eigyo_tanto" name="eigyo_tanto" required></select><br>
 
          
             <div class="form-check form-check-inline">
@@ -48,9 +48,9 @@
             <label for="shop_name">配送先名</label><input type="text" id="destination" name="destination" required><br>
            
             <label for="zip_code">郵便番号</label><input type="text" id="zip_code" name="zip_code" maxlength="7" placeholder="-ハイフンなし7桁" required><br>
-            <label for="prefecture">都道府県</label><input type="text" id="prefecture" name="prefecture" placeholder="都道府県">
-            <input type="text" id="city" name="city" placeholder="市区町村"><br>
-            <label for="address">以下住所</label><input type="text" id="address" name="address" placeholder="その他住所">
+            <label for="prefecture">都道府県</label><input type="text" id="prefecture" name="prefecture" placeholder="都道府県" required>
+            <input type="text" id="city" name="city" placeholder="市区町村" required><br>
+            <label for="address">以下住所</label><input type="text" id="address" name="address" placeholder="その他住所" required>
             <input type="text" id="bldg" name="bldg" placeholder="ビル名等"><br>
             <label for="email">メール　</label><input type="text" id="email" name="email" placeholder="例）info@example.com">
             <label for="tel">TEL</label><input type="tel" pattern="[\d\-]*" id="tel" name="tel" size="15" required>
