@@ -62,6 +62,7 @@ const eigyoTantoList = [
   {val:'ishii', txt:'石井'},
   
   //第2営業部
+  {val:'eigyo2', txt:'第二営業部'},
   {val:'tomori', txt:'友利'},
   {val:'nishi', txt:'西'},
   {val:'nagayama', txt:'永山'},
